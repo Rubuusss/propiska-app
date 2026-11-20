@@ -1893,3 +1893,19 @@
 </script>
 </body>
 </html>
+<script>
+(function () {
+  document.querySelectorAll('h1').forEach(function (h) {
+    var inLogin = !!h.closest('.login-card');
+    var img = document.createElement('img');
+    img.src = '/logo.png';
+    img.alt = 'Учёт прописки';
+    img.style.cssText = inLogin
+      ? 'height:96px;width:auto;display:block;margin:0 auto 12px;'
+      : 'height:52px;width:auto;display:block;';
+    h.replaceWith(img);
+  });
+  var sub = document.querySelector('header p');
+  if (sub) sub.remove();
+})();
+</script>
